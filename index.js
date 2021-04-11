@@ -7,7 +7,7 @@ const Intern = require("./lib/Intern");
 
 // Start HTML generation by invoking node index.js
 
-// The user is prompted for Team Manager information, then taken to the Options Menu
+// The user is prompted for Manager information, then taken to the Options Menu
 const manager = [];
 var newManager;
 const managerQuestions = [
