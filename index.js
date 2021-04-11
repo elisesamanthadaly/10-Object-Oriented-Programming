@@ -1,37 +1,41 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
+
 // Start HTML generation by invoking node index.js
 
 // The user is prompted for Team Manager information, then taken to the Options Menu
-var manager = [];
+const manager = [];
 var newManager;
-var managerQuestions = [
+const managerQuestions = [
     {
         type: "input",
-        name: "managerName",
+        name: "name",
         message: "What is the team manager's name?",
     },
     {
         type: "input",
-        name: "managerID",
+        name: "id",
         message: "What is the team manager's employee ID?",
     },
     {
         type: "input",
-        name: "managerEmail",
+        name: "email",
         message: "What is the team manager's email address?",
     },
     {
         type: "input",
-        name: "managerOffice",
+        name: "officeNumber",
         message: "What is the team manager's office number?",
     },
 ];
 
 function managerAsk() {
     inquirer.prompt(managerQuestions).then((managerAnswers) => {
-        newManager = managerAnswers;
+        newManager = new Manager(managerAnswers.name, managerAnswers.id, managerAnswers.email, managerAnswers.officeNumber);
         manager.push(newManager);
         optionsAsk();
     });
@@ -40,7 +44,7 @@ function managerAsk() {
 managerAsk();
 
 // Within the Options Menu, the user can add information for engineer(s) and intern(s) before exiting/generating the HTML file
-var optionsMenu = [
+const optionsMenu = [
     {
         type: "list",
         name: "options",
@@ -49,75 +53,101 @@ var optionsMenu = [
     },
 ];
 
-var engineers = [];
+const engineers = [];
 var newEngineer;
-var engineerQuestions = [
+const engineerQuestions = [
     {
         type: "input",
-        name: "engineerName",
+        name: "name",
         message: "What is this engineer's name?",
     },
     {
         type: "input",
-        name: "engineerID",
+        name: "id",
         message: "What is this engineer's employee ID?",
     },
     {
         type: "input",
-        name: "engineerEmail",
+        name: "email",
         message: "What is this engineer's email?",
     },
     {
         type: "input",
-        name: "engineerGitHub",
+        name: "github",
         message: "What is this engineer's GitHub username?",
     },
 ];
 
-var interns= [];
+const interns= [];
 var newIntern;
-var internQuestions = [
+const internQuestions = [
     {
         type: "input",
-        name: "internName",
+        name: "name",
         message: "What is this intern's name?",
     },
     {
         type: "input",
-        name: "internID",
+        name: "id",
         message: "What is this intern's employee ID?",
     },
     {
         type: "input",
-        name: "internEmail",
+        name: "email",
         message: "What is this intern's email address?",
     },
     {
         type: "input",
-        name: "internSchool",
+        name: "school",
         message: "What is this intern's school?",
     },
 ];
 
 // Framework for the HTML file
 const generateHTML = () => `
-${manager[0].managerName}
-${engineers[0].engineerName}
-${interns[0].internName}
+${manager[0].name}
+${manager[0].id}
+${manager[0].email}
+${manager[0].officeNumber}
+${manager[0].getRole()}
+
+${engineers[0].name}
+${engineers[0].id}
+${engineers[0].email}
+${engineers[0].github}
+${engineers[0].getRole()}
+
+${engineers[1].name}
+${engineers[1].id}
+${engineers[1].email}
+${engineers[1].github}
+${engineers[1].getRole()}
+
+${interns[0].name}
+${interns[0].id}
+${interns[0].email}
+${interns[0].school}
+${interns[0].getRole()}
+
+${interns[1].name}
+${interns[1].id}
+${interns[1].email}
+${interns[1].school}
+${interns[1].getRole()}
 `;
 
 function optionsAsk() {
     inquirer.prompt(optionsMenu).then((chosenOption) => {
         if (chosenOption.options === "Add an engineer") {
             inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
-                newEngineer = engineerAnswers;
+                newEngineer = new Engineer(engineerAnswers.name, engineerAnswers.id, engineerAnswers.email, engineerAnswers.github);
                 engineers.push(newEngineer);
                 optionsAsk();
             });
         }
         else if (chosenOption.options === "Add an intern") {
             inquirer.prompt(internQuestions).then((internAnswers) => {
-                newIntern = internAnswers;
+                newIntern = new Intern(internAnswers.name, internAnswers.id, internAnswers.email, internAnswers.school);
                 interns.push(newIntern);
                 optionsAsk();
             });
@@ -127,7 +157,7 @@ function optionsAsk() {
             const HTMLContent = generateHTML();
 
             // Writes HTML file
-            fs.writeFile(`./lib/index.html`, HTMLContent, (error) =>
+            fs.writeFile(`./dist/index.html`, HTMLContent, (error) =>
                 error ? console.log(error) : console.log("Generating HTML...")
             );
         }
