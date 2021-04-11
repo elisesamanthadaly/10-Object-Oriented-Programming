@@ -5,6 +5,8 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
+const template = require("./src/template");
+
 // Start HTML generation by invoking node index.js
 
 // The user is prompted for Manager information, then taken to the Options Menu
@@ -103,39 +105,6 @@ const internQuestions = [
     },
 ];
 
-// Framework for the HTML file
-const generateHTML = () => `
-${manager[0].name}
-${manager[0].id}
-${manager[0].email}
-${manager[0].officeNumber}
-${manager[0].getRole()}
-
-${engineers[0].name}
-${engineers[0].id}
-${engineers[0].email}
-${engineers[0].github}
-${engineers[0].getRole()}
-
-${engineers[1].name}
-${engineers[1].id}
-${engineers[1].email}
-${engineers[1].github}
-${engineers[1].getRole()}
-
-${interns[0].name}
-${interns[0].id}
-${interns[0].email}
-${interns[0].school}
-${interns[0].getRole()}
-
-${interns[1].name}
-${interns[1].id}
-${interns[1].email}
-${interns[1].school}
-${interns[1].getRole()}
-`;
-
 function optionsAsk() {
     inquirer.prompt(optionsMenu).then((chosenOption) => {
         if (chosenOption.options === "Add an engineer") {
@@ -154,7 +123,7 @@ function optionsAsk() {
         }
         else {
             // Fills in HTML document
-            const HTMLContent = generateHTML();
+            const HTMLContent = template.generateHTML(manager, engineers, interns);
 
             // Writes HTML file
             fs.writeFile(`./dist/index.html`, HTMLContent, (error) =>
