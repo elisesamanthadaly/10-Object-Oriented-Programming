@@ -1,3 +1,5 @@
+// Invoke npm test Employee to use this test
+
 const Employee = require("../lib/Employee");
 
 describe("Employee class", () => {

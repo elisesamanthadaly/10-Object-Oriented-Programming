@@ -1,3 +1,4 @@
+/* Color variables */
 :root {
     --header: #E14C38;
     --header-text: white;
@@ -48,6 +49,7 @@ header {
     font-size: 18px;
 }
 
+/* # corresponds with employee's role on template */
 #manager::before {
     content: "☕";
 }

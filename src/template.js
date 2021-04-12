@@ -1,3 +1,5 @@
+// Template values populated by command-line user prompts after invoking node index.js
+
 const generateHTML = function(manager, engineers, interns) {
     var headerText = 
 `<!DOCTYPE html>
@@ -14,6 +16,7 @@ const generateHTML = function(manager, engineers, interns) {
     <div id="container">
 `
 
+    // Currently only one manager's information can be entered, but the template could easily be edited to accomodate more. No manager card is generated if no manager information is entered (name needed at minimum)
     var managerText = ""
     if (manager[0].name !== "") {
         for (i = 0; i < manager.length; i++) {
@@ -24,7 +27,7 @@ const generateHTML = function(manager, engineers, interns) {
                 <br>
                 <div class="role" id="manager">${manager[i].getRole()}</div>
             </div>
-            <div class="cardBody">
+            <div>
                 <div class="employeeInfo">
                     <div class="infoItem">ID: ${manager[i].id}</div>
                     <div class="infoItem">Email: <a href="mailto:${manager[i].email}">${manager[i].email}</a></div>
@@ -35,7 +38,8 @@ const generateHTML = function(manager, engineers, interns) {
 `
         }
     }
-        
+    
+    // Iterates over engineers array to generate one card per engineer
     var engineersText = ""
     if (engineers !== []) {
         for (i = 0; i < engineers.length; i++) {
@@ -46,7 +50,7 @@ const generateHTML = function(manager, engineers, interns) {
                 <br>
                 <div class="role" id="engineer">${engineers[i].getRole()}</div>
             </div>
-            <div class="cardBody">
+            <div>
                 <div class="employeeInfo">
                     <div class="infoItem">ID: ${engineers[i].id}</div>
                     <div class="infoItem">Email: <a href="mailto:${engineers[i].email}">${engineers[i].email}</a></div>
@@ -58,6 +62,7 @@ const generateHTML = function(manager, engineers, interns) {
         }
     }
 
+    // Iterates over interns array to generate one card per intern
     var internsText = ""
     if (interns !== []) {
         for (i = 0; i < interns.length; i++) {
@@ -68,7 +73,7 @@ const generateHTML = function(manager, engineers, interns) {
                 <br>
                 <div class="role" id="intern">${interns[i].getRole()}</div>
             </div>
-            <div class="cardBody">
+            <div>
                 <div class="employeeInfo">
                     <div class="infoItem">ID: ${interns[i].id}</div>
                     <div class="infoItem">Email: <a href="mailto:${interns[i].email}">${interns[i].email}</a></div>
@@ -85,6 +90,7 @@ const generateHTML = function(manager, engineers, interns) {
 </body>
 </html>`
 
+    // Final HTML is a combination of the generated strings. If no employees are entered, a minimally viable page is still generated
     return `${headerText}` + `${managerText}` + `${engineersText}` + `${internsText}` + `${footerText}`;
 }
 

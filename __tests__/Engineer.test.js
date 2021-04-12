@@ -1,3 +1,5 @@
+// Invoke npm test Engineer to use this test
+
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer subclass", () => {

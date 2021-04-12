@@ -1,3 +1,5 @@
+// Invoke npm test Intern to use this test
+
 const Intern = require("../lib/Intern");
 
 describe("Intern subclass", () => {
