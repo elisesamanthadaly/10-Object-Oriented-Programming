@@ -17,7 +17,7 @@ This [video](https://drive.google.com/file/d/17A7vRmXZjj_CWxhBL6mbWV8u1gmC_txt/v
 
 ## Tests
 
-There are four tests (one each for the parent Employee class and the three subclasses: Manager, Engineer, and Intern) that be can be run through the command line to verify that the properties and methods of each of the classes are intact and functioning:
+There are four tests (one each for the parent Employee class and its three subclasses: Manager, Engineer, and Intern) that be can be run through the command line to verify that the properties and methods of each of the classes are intact and functioning:
 * npm test Employee
 * npm test Manager
 * npm test Engineer
