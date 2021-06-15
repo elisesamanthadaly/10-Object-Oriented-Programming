@@ -1,4 +1,4 @@
-# 10 Object-Oriented Programming
+# 10 Object-Oriented Programming 
 # Team Profile Generator
 
 This application is a Team Profile Generator run through the command line. Users are taken through a series of prompts to populate an HTML file with their team's information. The generated HTML file is then saved to the dist/ folder in the application's repository on their local machine.
