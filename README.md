@@ -29,7 +29,7 @@ There are four tests (one each for the parent Employee class and its three subcl
 
 ## Technologies Used
 
-* HTML, CSS, Javascript
+* Javascript, HTML, CSS
 * Node.js
 
 
