@@ -15,7 +15,7 @@ Clone the repository to your local machine. You should also have Git Bash and No
 
 This video details how to use the Team Profile Generator:
 
-[![preview](./assets/images/preview.png))](https://drive.google.com/file/d/17A7vRmXZjj_CWxhBL6mbWV8u1gmC_txt/view?usp=sharing)
+[![preview](./assets/images/preview.png)](https://drive.google.com/file/d/17A7vRmXZjj_CWxhBL6mbWV8u1gmC_txt/view?usp=sharing)
 
 
 ## Tests
