@@ -38,6 +38,10 @@ There are four tests (one each for the parent Employee class and its three subcl
 This application relies on [Inquirer.js](https://www.npmjs.com/package/inquirer). [Jest](https://www.npmjs.com/package/jest) is required for the tests.
 
 
+## Contact
+Please email me (elise.samantha.daly@gmail.com) with any questions/concerns about this application!
+
+
 ## License
 
 MIT License
