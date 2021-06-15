@@ -7,12 +7,13 @@ The Team Profile Generator's GitHub repository can be found [here](https://githu
 
 
 ## Installation
+
 Clone the repository to your local machine. You should also have Git Bash and Node.js installed. You'll need to run npm install from the terminal at the root directory of the local repository to install the application's dependencies (fs, inquirer, and jest).
 
 
 ## Usage
 
-This [video](https://drive.google.com/file/d/17A7vRmXZjj_CWxhBL6mbWV8u1gmC_txt/view?usp=sharing) details how to use the Team Profile Generator.
+This [![preview](./assets/images/preview.png)](https://drive.google.com/file/d/17A7vRmXZjj_CWxhBL6mbWV8u1gmC_txt/view?usp=sharing "video") details how to use the Team Profile Generator.
 
 
 ## Tests
@@ -25,8 +26,10 @@ There are four tests (one each for the parent Employee class and its three subcl
 
 
 ## Technologies Used
+
 * HTML, CSS, Javascript
 * Node.js
+
 
 ## Credits
 
