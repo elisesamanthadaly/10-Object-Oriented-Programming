@@ -13,7 +13,7 @@ Clone the repository to your local machine. You should also have Git Bash and No
 
 ## Usage
 
-This [![preview](./assets/images/preview.png)](https://drive.google.com/file/d/17A7vRmXZjj_CWxhBL6mbWV8u1gmC_txt/view?usp=sharing "video") details how to use the Team Profile Generator.
+This [video](./assets/images/preview.png)](https://drive.google.com/file/d/17A7vRmXZjj_CWxhBL6mbWV8u1gmC_txt/view?usp=sharing) details how to use the Team Profile Generator.
 
 
 ## Tests
