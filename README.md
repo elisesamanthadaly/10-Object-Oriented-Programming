@@ -24,6 +24,10 @@ There are four tests (one each for the parent Employee class and its three subcl
 * npm test Intern
 
 
+## Technologies Used
+* HTML, CSS, Javascript
+* Node.js
+
 ## Credits
 
 This application relies on [Inquirer.js](https://www.npmjs.com/package/inquirer). [Jest](https://www.npmjs.com/package/jest) is required for the tests.
